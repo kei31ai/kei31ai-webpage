@@ -536,15 +536,15 @@ img { display: block; max-width: 100%; }
   }
 
   .links__name {
-    width: auto;
+    width: 100%;
     font-size: 12px;
-    margin-bottom: 4px;
+    margin-bottom: 0;
   }
 
   .links__sep { display: none; }
 
   .links__info {
-    width: 100%;
+    flex: 0 0 100%;
     padding-left: 0;
   }
 
