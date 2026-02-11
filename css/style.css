@@ -127,6 +127,17 @@ img { display: block; max-width: 100%; }
   color: var(--text);
   letter-spacing: -0.01em;
   transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.nav__icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 8px;
 }
 
 .nav__logo:hover {
@@ -483,6 +494,7 @@ img { display: block; max-width: 100%; }
   .container { padding: 0 24px; }
 
   .nav { padding: 18px 24px; }
+  .nav__logo-text { display: none; }
   .nav__links { gap: 24px; }
 
   .side-text { display: none; }
@@ -532,6 +544,7 @@ img { display: block; max-width: 100%; }
 
   .nav { padding: 14px 20px; }
   .nav__logo { font-size: 14px; }
+  .nav__logo-text { display: none; }
   .nav__links { gap: 20px; }
   .nav__links a { font-size: 10px; }
 
