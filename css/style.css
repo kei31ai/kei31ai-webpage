@@ -43,7 +43,7 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 /* Scroll target offset for fixed nav */
-#news, #about, #links { scroll-margin-top: 80px; }
+#news, #about, #achievements, #gallery, #links { scroll-margin-top: 80px; }
 
 /* --- Container --- */
 .container {
@@ -369,6 +369,105 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================
+   ACHIEVEMENTS — Number cards
+   ============================================ */
+.achievements {
+  padding: 100px 0 80px;
+}
+
+.achievements__title {
+  font-family: var(--font-body);
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 48px;
+}
+
+.achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.achievements__card {
+  text-align: center;
+  padding: 32px 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+.achievements__card:hover {
+  border-color: var(--border-accent);
+}
+
+.achievements__number {
+  display: block;
+  font-family: var(--font-head);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.achievements__label {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.achievements__meta {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   GALLERY — Photo grid
+   ============================================ */
+.gallery {
+  padding: 80px 0 100px;
+}
+
+.gallery__title {
+  font-family: var(--font-body);
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 48px;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery__item {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  transition: transform 0.5s var(--ease);
+}
+
+.gallery__item:hover img {
+  transform: scale(1.03);
+}
+
+/* ============================================
    LINKS — Clean list layout
    ============================================ */
 .links {
@@ -539,6 +638,13 @@ img { display: block; max-width: 100%; }
   .bio__item { flex-wrap: wrap; gap: 4px; }
   .bio__date { width: auto; margin-right: 12px; }
 
+  .achievements { padding: 80px 0 60px; }
+  .achievements__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .achievements__card { padding: 24px 12px; }
+
+  .gallery { padding: 60px 0 80px; }
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
   .links { padding: 60px 0 80px; }
   .links__title { margin-bottom: 36px; }
 
@@ -584,6 +690,11 @@ img { display: block; max-width: 100%; }
 
   .bio__date { font-size: 11px; }
   .bio__text { font-size: 13px; }
+
+  .achievements__number { font-size: 28px; }
+  .achievements__card { padding: 20px 10px; }
+
+  .gallery__grid { gap: 8px; }
 
   .links__info strong { font-size: 14px; }
   .links__info span { font-size: 12px; }
