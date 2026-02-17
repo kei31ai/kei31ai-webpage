@@ -121,7 +121,8 @@ img { display: block; max-width: 100%; }
   z-index: 100;
   display: flex;
   align-items: center;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 0;
   padding: 24px 40px;
   transition: background 0.4s, box-shadow 0.4s;
 }
@@ -161,6 +162,9 @@ img { display: block; max-width: 100%; }
 .nav__links {
   display: flex;
   gap: 36px;
+  width: 100%;
+  justify-content: center;
+  padding-top: 12px;
 }
 
 .nav__links a {
@@ -181,6 +185,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-left: auto;
 }
 
 .nav__socials a {
@@ -603,23 +608,10 @@ img { display: block; max-width: 100%; }
 
   .nav {
     padding: 18px 24px;
-    flex-wrap: wrap;
-    gap: 0;
-  }
-
-  .nav__logo {
-    margin-right: auto;
-  }
-
-  .nav__socials {
-    margin-left: auto;
   }
 
   .nav__links {
-    width: 100%;
-    justify-content: center;
     gap: 24px;
-    padding-top: 12px;
   }
 
   .side-text { display: none; }
