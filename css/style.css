@@ -209,7 +209,7 @@ img { display: block; max-width: 100%; }
    ============================================ */
 .hero {
   position: relative;
-  padding-top: 72px;
+  padding-top: 110px;
   overflow: hidden;
 }
 
@@ -616,7 +616,7 @@ img { display: block; max-width: 100%; }
 
   .side-text { display: none; }
 
-  .hero { padding-top: 100px; }
+  .hero { padding-top: 120px; }
   .hero__photo { max-width: 400px; }
   .hero__glow { width: 400px; height: 400px; }
 
