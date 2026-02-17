@@ -472,6 +472,82 @@ img { display: block; max-width: 100%; }
   transform: scale(1.03);
 }
 
+.gallery__item {
+  cursor: pointer;
+}
+
+/* --- Gallery Lightbox --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  transform: scale(0.95);
+  transition: transform 0.3s var(--ease);
+}
+
+.lightbox.is-open .lightbox__img {
+  transform: scale(1);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.lightbox__close:hover {
+  opacity: 1;
+}
+
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  padding: 16px;
+}
+
+.lightbox__nav:hover {
+  opacity: 1;
+}
+
+.lightbox__prev { left: 16px; }
+.lightbox__next { right: 16px; }
+
 /* ============================================
    LINKS — Clean list layout
    ============================================ */

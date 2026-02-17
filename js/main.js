@@ -99,11 +99,62 @@
     });
   }
 
+  // --- Gallery Lightbox ---
+  function initLightbox() {
+    var lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+
+    var img = lightbox.querySelector('.lightbox__img');
+    var items = document.querySelectorAll('.gallery__item img');
+    var current = 0;
+
+    function open(index) {
+      current = index;
+      img.src = items[current].src;
+      img.alt = items[current].alt;
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    function prev() {
+      open((current - 1 + items.length) % items.length);
+    }
+
+    function next() {
+      open((current + 1) % items.length);
+    }
+
+    items.forEach(function (item, i) {
+      item.parentElement.addEventListener('click', function () { open(i); });
+    });
+
+    lightbox.querySelector('.lightbox__close').addEventListener('click', close);
+    lightbox.querySelector('.lightbox__prev').addEventListener('click', prev);
+    lightbox.querySelector('.lightbox__next').addEventListener('click', next);
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    });
+  }
+
   // --- Init ---
   document.addEventListener('DOMContentLoaded', function () {
     initCarousel();
     initNav();
     initReveal();
     initSmoothScroll();
+    initLightbox();
   });
 })();
