@@ -149,6 +149,16 @@
     });
   }
 
+  // --- Days Active: auto-calculate from start date ---
+  function initDaysActive() {
+    var el = document.getElementById('days-active');
+    if (!el) return;
+    var start = new Date('2026-01-13T00:00:00+09:00');
+    var now = new Date();
+    var days = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+    el.textContent = days;
+  }
+
   // --- Init ---
   document.addEventListener('DOMContentLoaded', function () {
     initCarousel();
@@ -156,5 +166,6 @@
     initReveal();
     initSmoothScroll();
     initLightbox();
+    initDaysActive();
   });
 })();
