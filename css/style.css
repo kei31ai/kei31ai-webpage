@@ -724,7 +724,8 @@ img { display: block; max-width: 100%; }
   body { font-size: 14px; }
 
   .nav { padding: 14px 20px; }
-  .nav__logo { font-size: 14px; }
+  .nav__logo { font-size: 14px; gap: 4px; }
+  .nav__icon { margin-right: 2px; }
   .nav__links { gap: 20px; }
   .nav__links a { font-size: 10px; }
 
