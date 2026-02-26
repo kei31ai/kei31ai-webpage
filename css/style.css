@@ -185,7 +185,7 @@ img { display: block; max-width: 100%; }
 .nav__socials {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
   margin-left: auto;
 }
 
