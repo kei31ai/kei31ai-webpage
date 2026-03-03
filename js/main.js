@@ -72,6 +72,10 @@
       goTo((current + 1) % total);
     }
 
+    function prev() {
+      goTo((current - 1 + total) % total);
+    }
+
     dots.forEach(function (dot) {
       dot.addEventListener('click', function () {
         goTo(parseInt(this.getAttribute('data-slide')));
@@ -79,6 +83,23 @@
         timer = setInterval(next, interval);
       });
     });
+
+    var prevBtn = document.querySelector('.hero__arrow--prev');
+    var nextBtn = document.querySelector('.hero__arrow--next');
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function () {
+        prev();
+        clearInterval(timer);
+        timer = setInterval(next, interval);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        next();
+        clearInterval(timer);
+        timer = setInterval(next, interval);
+      });
+    }
 
     timer = setInterval(next, interval);
   }
